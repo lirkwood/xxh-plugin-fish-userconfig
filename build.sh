@@ -88,7 +88,7 @@ do
         founddirectory=""
       fi
       mkdirifnotfound
-      cp "$userconfigfiles/$found" "$build_dir/$founddirectory/"
+      cp $found "$build_dir/$founddirectory/"
     else
       mkdirifnotfound
     fi
