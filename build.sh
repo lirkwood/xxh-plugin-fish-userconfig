@@ -56,7 +56,7 @@ fi
 # Copy files to the build directory that will be uploaded to remote hosts.
 for filestocopy in pluginrc.fish
 do
-  for found in $(find "$filestocopy" -depth -print | xargs realpath)
+  for found in $(find "$filestocopy" -depth -print)
   do
     if [ -f "$found" ]; then
       founddirectory=$(dirname "$found")
@@ -75,7 +75,7 @@ done
 # build directory that will be uploaded to remote hosts.
 userconfigfiles="$HOME/.xxh/.xxh/config/xxh-plugin-fish-userconfig"
 cd $userconfigfiles
-for filestocopy in fish
+for filestocopy in (realpath fish)
 do
   for found in $(find "$filestocopy" -depth -print)
   do
