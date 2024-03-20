@@ -75,7 +75,7 @@ done
 # build directory that will be uploaded to remote hosts.
 userconfigfiles="$HOME/.xxh/.xxh/config/xxh-plugin-fish-userconfig"
 cd $userconfigfiles
-for filestocopy in (realpath fish)
+for filestocopy in $(realpath fish)
 do
   for found in $(find "$filestocopy" -depth -print)
   do
