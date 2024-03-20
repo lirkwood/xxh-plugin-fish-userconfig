@@ -77,7 +77,7 @@ userconfigfiles="$HOME/.xxh/.xxh/config/xxh-plugin-fish-userconfig"
 cd $userconfigfiles
 for filestocopy in fish
 do
-  for found in $(find "$filestocopy" -depth -print)
+  for found in $(find "$filestocopy" -depth -print | xargs realpath)
   do
     echo "--------------------"
     echo $found
