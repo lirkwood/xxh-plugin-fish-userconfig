@@ -79,6 +79,9 @@ for filestocopy in fish
 do
   for found in $(find "$filestocopy" -depth -print)
   do
+    echo "--------------------"
+    echo $found
+    echo "--------------------"
     if [ -f "$found" ]; then
       founddirectory=$(dirname "$found")
       if [ "$founddirectory" == "." ]; then
